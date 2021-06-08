@@ -1,10 +1,12 @@
 import React from "react";
-import { Header } from "./components/header";
+import Header from "./components/header";
+import MoviesList from "./features/movies-list/movies-list";
 
 function App() {
   return (
-    <div>
+    <div className="flex flex-wrap min-h-screen">
       <Header />
+      <MoviesList />
     </div>
   );
 }
