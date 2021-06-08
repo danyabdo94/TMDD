@@ -4,12 +4,74 @@
 
 body {
   margin: 0;
-  font-family: 'Source Sans Pro', Arial, sans-serif;
+  font-family: "Source Sans Pro", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.Collapsible {
+  background-color: white;
+}
+
+.Collapsible__contentInner {
+  padding: 10px;
+  border: 1px solid #ebebeb;
+  border-top: 0;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+.Collapsible__contentInner p {
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 20px;
+}
+.Collapsible__contentInner p:last-child {
+  margin-bottom: 0;
+}
+
+.Collapsible__trigger {
+  display: block;
+  font-weight: 400;
+  text-decoration: none;
+  position: relative;
+  border: 1px solid #e3e3e3;
+  border-radius: 8px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  align-items: center;
+  padding: 14px 16px;
+  cursor: pointer;
+  font-size: 1.1em;
+  font-weight: 600;
+}
+
+.Collapsible__trigger.is-closed {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+}
+
+.Collapsible__trigger:after {
+  content: "\25BE";
+  position: absolute;
+  right: 16px;
+  top: 12px;
+  display: block;
+}
+.Collapsible__trigger.is-open:after {
+  transform: rotateZ(180deg);
+}
+.Collapsible__trigger.is-disabled {
+  opacity: 0.5;
+  background-color: grey;
 }
