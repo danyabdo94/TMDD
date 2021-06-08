@@ -1,50 +1,33 @@
-import React from "react";
-import Collapsible from "react-collapsible";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import Filters from "../../components/filters";
+import data from "../../mock.data";
+import Movie from "../../components/movie";
 
 function MoviesList() {
+  // useEffect(() => {
+  //   axios
+  //     .get(
+  //       `https://api.themoviedb.org/3/trending/movie/week?api_key=f9f33a1abf02ec3217e6018fc9fe264a`
+  //     )
+  //     .then((res) => {
+  //     });
+  // }, []);
+
   return (
     <main className="w-full mt-24 sm:mt-16 min-h-full px-10 py-8">
       <h2 className="text-2xl font-semibold mb-5">Popular Movies</h2>
       <div className="w-full flex">
         <div className="min-w-1/5 w-1/5">
-          <Collapsible trigger="Sort" transitionTime={20}>
-            <p>
-              This is the collapsible content. It can be any element or React
-              component you like.
-            </p>
-            <p>
-              It can even be another Collapsible component. Check out the next
-              section!
-            </p>
-          </Collapsible>
-
-          <Collapsible trigger="Filters" transitionTime={20} className="mt-3">
-            <p>
-              This is the collapsible content. It can be any element or React
-              component you like.
-            </p>
-            <p>
-              It can even be another Collapsible component. Check out the next
-              section!
-            </p>
-          </Collapsible>
-
-          <Collapsible
-            trigger="Where to watch"
-            transitionTime={20}
-            className="mt-3"
-          >
-            <p>
-              This is the collapsible content. It can be any element or React
-              component you like.
-            </p>
-            <p>
-              It can even be another Collapsible component. Check out the next
-              section!
-            </p>
-          </Collapsible>
+          <Filters />
         </div>
-        <div className="pl-8">Movies</div>
+        <div className="pl-8 min-w-4/5 w-4/5">
+          <div className="w-full flex justify-between flex-wrap -mt-7">
+            {data?.results.map((element) => (
+              <Movie movie={element}></Movie>
+            ))}
+          </div>
+        </div>
       </div>
     </main>
   );

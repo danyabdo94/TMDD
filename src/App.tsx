@@ -1,4 +1,3 @@
-import React from "react";
 import Header from "./components/header";
 import MoviesList from "./features/movies-list/movies-list";
 

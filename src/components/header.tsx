@@ -1,5 +1,3 @@
-import React from "react";
-
 function Header() {
   return (
     <header className="w-full bg-blue-dark p-2 mt-0 fixed z-10 top-0">
