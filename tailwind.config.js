@@ -19,6 +19,7 @@ module.exports = {
         dark: "#ff16d1",
       },
       grey: {
+        darkest:"#666666",
         dark: "#c8c8c8",
         DEFAULT: "#e3e3e3",
         light: "#e3e3e3",
@@ -37,6 +38,7 @@ module.exports = {
     },
     height: {
       card: "370px",
+      image: "270px",
     },
     variants: {
       extend: {},
