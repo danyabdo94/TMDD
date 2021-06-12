@@ -19,7 +19,7 @@ module.exports = {
         dark: "#ff16d1",
       },
       grey: {
-        darkest:"#666666",
+        darkest: "#666666",
         dark: "#c8c8c8",
         DEFAULT: "#e3e3e3",
         light: "#e3e3e3",
@@ -34,6 +34,11 @@ module.exports = {
       "1/2": "50%",
       "3/4": "75%",
       "4/5": "80%",
+      full: "100%",
+    },
+    minHeight: {
+      0: "0",
+      9: "2.25rem",
       full: "100%",
     },
     height: {

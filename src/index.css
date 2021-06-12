@@ -92,7 +92,7 @@ code {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-37%, -25%);
+  transform: translate(-33%, -25%);
 }
 .icon-r0:before {
   padding-left: 4px;
