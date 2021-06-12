@@ -24,7 +24,7 @@ function MoviesList() {
         <div className="pl-8 w-full sm:min-w-4/5 sm:w-4/5">
           <div className="w-full flex justify-between flex-wrap sm:-mt-7">
             {data?.results.map((element) => (
-              <Movie movie={element}></Movie>
+              <Movie movie={element} key={element.id}></Movie>
             ))}
           </div>
         </div>
