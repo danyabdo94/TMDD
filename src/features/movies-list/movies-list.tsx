@@ -17,12 +17,12 @@ function MoviesList() {
   return (
     <main className="w-full mt-24 sm:mt-16 min-h-full px-10 py-8">
       <h2 className="text-2xl font-semibold mb-5">Popular Movies</h2>
-      <div className="w-full flex">
-        <div className="min-w-1/5 w-1/5">
+      <div className="w-full flex flex-wrap">
+        <div className="w-full sm:min-w-1/5 sm:w-1/5">
           <Filters />
         </div>
-        <div className="pl-8 min-w-4/5 w-4/5">
-          <div className="w-full flex justify-between flex-wrap -mt-7">
+        <div className="pl-8 w-full sm:min-w-4/5 sm:w-4/5">
+          <div className="w-full flex justify-between flex-wrap sm:-mt-7">
             {data?.results.map((element) => (
               <Movie movie={element}></Movie>
             ))}
