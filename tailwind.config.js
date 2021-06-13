@@ -24,6 +24,12 @@ module.exports = {
         DEFAULT: "#e3e3e3",
         light: "#e3e3e3",
       },
+      barColor: {
+        green: "#21d07a",
+        yellow: "#d2d531",
+        emptyGreen: "#204529",
+        emptyYellow: "#423d0f"
+      },
       white: colors.white,
       black: colors.black,
     },

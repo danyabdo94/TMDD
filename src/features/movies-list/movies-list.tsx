@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Filters from "../../components/filters";
 import data from "../../mock.data";
-import Movie from "../../components/movie";
+import Movie from "../../components/movie/movie";
 
 function MoviesList() {
   // useEffect(() => {
