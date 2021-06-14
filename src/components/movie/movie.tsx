@@ -2,20 +2,10 @@ import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
 import Formatter from "../../utils/formatter";
 import "react-circular-progressbar/dist/styles.css";
 import "./icon.css";
+import ColorsFromVotes from "../../utils/colors-from-votes";
 
 function Movie({ movie }: { movie: any }) {
   const percentage = movie.vote_average * 10;
-  const getColors = (
-    percentage: number
-  ) => {
-    if (percentage < 50) {
-      return { pathColor: "#db2360", trailColor: "#571435" };
-    } else if (percentage < 70) {
-      return { pathColor: "#d2d531", trailColor: "#423d0f" };
-    } else {
-      return { pathColor: "#21d07a", trailColor: "#204529" };
-    }
-  };
   return (
     <div className="flex flex-wrap justify-center self-center border border-grey-light w-48 max-w-7xl h-card mt-7 rounded-lg">
       <div className="w-full h-image">
@@ -39,7 +29,7 @@ function Movie({ movie }: { movie: any }) {
               </div>
               <CircularProgressbar
                 styles={buildStyles({
-                  ...getColors(percentage),
+                  ...ColorsFromVotes(percentage),
                 })}
                 value={percentage}
               />
