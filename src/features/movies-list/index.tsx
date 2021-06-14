@@ -2,18 +2,9 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Filters from "../../components/filters";
 import data from "../../mock.data";
-import Movie from "../../components/movie/movie";
+import MovieItem from "../../components/movie-item";
 
 function MoviesList() {
-  // useEffect(() => {
-  //   axios
-  //     .get(
-  //       `https://api.themoviedb.org/3/trending/movie/week?api_key=f9f33a1abf02ec3217e6018fc9fe264a`
-  //     )
-  //     .then((res) => {
-  //     });
-  // }, []);
-
   return (
     <main className="w-full mt-24 sm:mt-16 min-h-full px-10 py-8">
       <h2 className="text-2xl font-semibold mb-5">Popular Movies</h2>
@@ -24,7 +15,7 @@ function MoviesList() {
         <div className="pl-8 w-full sm:min-w-4/5 sm:w-4/5">
           <div className="w-full flex justify-between flex-wrap sm:-mt-7">
             {data?.results.map((element) => (
-              <Movie movie={element} key={element.id}></Movie>
+              <MovieItem movie={element} key={element.id}></MovieItem>
             ))}
           </div>
         </div>

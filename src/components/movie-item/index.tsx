@@ -4,7 +4,7 @@ import "react-circular-progressbar/dist/styles.css";
 import "./icon.css";
 import ColorsFromVotes from "../../utils/colors-from-votes";
 
-function Movie({ movie }: { movie: any }) {
+function MovieItem({ movie }: { movie: any }) {
   const percentage = movie.vote_average * 10;
   return (
     <div className="flex flex-wrap justify-center self-center border border-grey-light w-48 max-w-7xl h-card mt-7 rounded-lg">
@@ -50,4 +50,4 @@ function Movie({ movie }: { movie: any }) {
   );
 }
 
-export default Movie;
+export default MovieItem;

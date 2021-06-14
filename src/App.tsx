@@ -1,11 +1,22 @@
 import Header from "./components/header";
-import MoviesList from "./features/movies-list/movies-list";
+import MoviesList from "./features/movies-list";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Movie from "./features/movie";
 
 function App() {
   return (
     <div className="flex flex-wrap min-h-screen">
       <Header />
-      <MoviesList />
+      <Router>
+        <Switch>
+          <Route path="/">
+            <MoviesList />
+          </Route>
+          <Route path="/movies/:id">
+            <Movie />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
