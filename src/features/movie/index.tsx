@@ -21,7 +21,7 @@ function Movie() {
                 <div className="w-full min-w-full h-full">
                   <img
                     className="block w-full min-w-full h-full min-h-full border-0 outline-none"
-                    src={`https://image.tmdb.org/t/p/w300_and_h450_bestv2/${mockedMovie.backdrop_path}`}
+                    src={`https://image.tmdb.org/t/p/w300_and_h450_bestv2/${mockedMovie.poster_path}`}
                     alt={mockedMovie.original_title}
                   />
                 </div>
