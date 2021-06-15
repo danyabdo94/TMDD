@@ -1,7 +1,9 @@
-import { mockMovie } from "../../mock.data";
+import { mockCredits, mockMovie } from "../../mock.data";
 
 function Movie() {
-  const mockedMovie = mockMovie;
+  const movie = mockMovie;
+  const credits = mockCredits.crew.slice(0, 6);
+
   const convertRunTime = (runtime: number) => {
     return `${(runtime - (runtime % 60)) / 60}h ${runtime % 60}m`;
   };
@@ -10,7 +12,7 @@ function Movie() {
       className="bg-cover bg-no-repeat border-b border-black w-full relative -bg-r-200 bg-top mt-16"
       style={{
         zIndex: 1,
-        backgroundImage: `url(https://image.tmdb.org/t/p/w1920_and_h800_multi_faces${mockedMovie.backdrop_path})`,
+        backgroundImage: `url(https://image.tmdb.org/t/p/w1920_and_h800_multi_faces${movie.backdrop_path})`,
       }}
     >
       <div className="bg-gradient-to-r from-black-to-dark flex justify-center flex-wrap">
@@ -21,8 +23,8 @@ function Movie() {
                 <div className="w-full min-w-full h-full">
                   <img
                     className="block w-full min-w-full h-full min-h-full border-0 outline-none"
-                    src={`https://image.tmdb.org/t/p/w300_and_h450_bestv2/${mockedMovie.poster_path}`}
-                    alt={mockedMovie.original_title}
+                    src={`https://image.tmdb.org/t/p/w300_and_h450_bestv2/${movie.poster_path}`}
+                    alt={movie.original_title}
                   />
                 </div>
               </div>
@@ -32,10 +34,10 @@ function Movie() {
               <section className="flex flex-wrap items-start content-center box-border pl-10">
                 <div className="w-full mb-6 flex flex-wrap" dir="auto">
                   <h2 className="w-full m-0 p-0 text-4xl font-semibold">
-                    {mockedMovie.original_title}
+                    {movie.original_title}
                     <span className="opacity-80	font-normal">
                       {" "}
-                      ({mockedMovie.release_date.split("-")[0]})
+                      ({movie.release_date.split("-")[0]})
                     </span>
                   </h2>
 
@@ -43,17 +45,15 @@ function Movie() {
                     <span className="inline-flex whitespace-no-wrap items-center content-center leading-none rounded-sm mr-2 border border-white border-opacity-60 text-opacity-60 px-1">
                       PG-13
                     </span>
-                    <span className="pl-0">
-                      {mockedMovie.release_date} (US)
-                    </span>
+                    <span className="pl-0">{movie.release_date} (US)</span>
                     <span className="pl-5 relative top-0 left-0 dotted">
-                      {mockedMovie.genres.map(
+                      {movie.genres.map(
                         (genre, index) =>
                           `${index > 0 ? ", " : ""}${genre.name}`
                       )}
                     </span>
                     <span className="pl-5 relative top-0 left-0 dotted">
-                      {convertRunTime(mockedMovie.runtime)}
+                      {convertRunTime(movie.runtime)}
                     </span>
                   </div>
                 </div>
@@ -62,7 +62,7 @@ function Movie() {
                     className="mb-0 font-normal italic opacity-70 text-bigger-10"
                     dir="auto"
                   >
-                    {mockedMovie.tagline}
+                    {movie.tagline}
                   </h3>
 
                   <h3
@@ -72,39 +72,16 @@ function Movie() {
                     Overview
                   </h3>
                   <div className="overview" dir="auto">
-                    <p>{mockedMovie.overview}</p>
+                    <p>{movie.overview}</p>
                   </div>
 
-                  <ol className="mt-5 justify-start flex-wrap list-none list-inside m-0 p-0 flex relative top-0 left-0">
-                    <li className="text-left mb-3 mr-0 box-border pr-5 w-1/3">
-                      <p className="font-bold">Craig Gillespie</p>
-                      <p className="text-smaller-10">Director</p>
-                    </li>
-
-                    <li className="text-left mb-3 mr-0 box-border pr-5 w-1/3">
-                      <p className="font-bold">Craig Gillespie</p>
-                      <p className="text-smaller-10">Screenplay</p>
-                    </li>
-
-                    <li className="text-left mb-3 mr-0 box-border pr-5 w-1/3">
-                      <p className="font-bold">Craig Gillespie</p>
-                      <p className="text-smaller-10">Screenplay</p>
-                    </li>
-
-                    <li className="text-left mb-3 mr-0 box-border pr-5 w-1/3">
-                      <p className="font-bold">Craig Gillespie</p>
-                      <p className="text-smaller-10">Story</p>
-                    </li>
-
-                    <li className="text-left mb-3 mr-0 box-border pr-5 w-1/3">
-                      <p className="font-bold">Craig Gillespie</p>
-                      <p className="text-smaller-10">Story</p>
-                    </li>
-
-                    <li className="text-left mb-3 mr-0 box-border pr-5 w-1/3">
-                      <p className="font-bold">Craig Gillespie</p>
-                      <p className="text-smaller-10">Story</p>
-                    </li>
+                  <ol className="mt-5 justify-start flex-wrap list-none list-inside m-0 p-0 flex top-0 left-0">
+                    {credits.map((credit) => (
+                      <li className="text-left mb-3 mr-0 box-border pr-5 w-1/3">
+                        <p className="font-bold">{credit.name}</p>
+                        <p className="text-smaller-10">{credit.job}</p>
+                      </li>
+                    ))}
                   </ol>
                 </div>
               </section>
