@@ -16,7 +16,7 @@ function Movie() {
       <div className="bg-gradient-to-r from-black-to-dark flex justify-center flex-wrap">
         <div className="pt-10 pb-10 w-full z-0 max-w-px-1400">
           <section className="text-white flex flex-nowrap">
-            <div className="border-0 overflow-hidden min-w-80 w-80 min-h-450 rounded-lg">
+            <div className="border-0 overflow-hidden w-full xs:min-w-80 xs:w-80 min-h-450 rounded-lg">
               <div className="block relative top-0 left-0 w-80 h-450">
                 <div className="w-full min-w-full h-full">
                   <img
