@@ -41,18 +41,28 @@ module.exports = {
       "3/4": "75%",
       "4/5": "80%",
       full: "100%",
+      '80': '20rem'
     },
     minHeight: {
       0: "0",
       9: "2.25rem",
       full: "100%",
+      '450': "450px",
     },
     height: {
       card: "370px",
       image: "270px",
+      '450': "450px",
+      full: "100%",
     },
     variants: {
       extend: {},
+    },
+    backgroundPosition: {
+      '-r-200': 'right -200px top'
+    },
+    maxWidth: {
+      'px-1400': '1400px'
     },
     plugins: [],
   },

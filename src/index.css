@@ -79,3 +79,34 @@ code {
   opacity: 0.5;
   background-color: grey;
 }
+
+.dotted::before {
+  font-size: 1.1em;
+  line-height: 1;
+  content: "\2022";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 7px;
+  display: inline-flex;
+  align-content: center;
+  align-items: center;
+  z-index: -1;
+}
+
+.text-bigger-10 {
+  font-size: 1.1em;
+}
+
+.text-bigger-20 {
+  font-size: 1.2em;
+}
+
+.text-smaller-10 {
+  font-size: 0.9em;
+}
+
+.from-black-to-dark{
+  background-image: linear-gradient(to right, rgba(3.14%, 3.14%, 3.14%, 1.00) 150px, rgba(3.14%, 3.14%, 3.14%, 0.84) 100%);
+}
