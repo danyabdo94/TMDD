@@ -19,7 +19,7 @@ function MovieItem({ movie }: { movie: any }) {
         </div>
       </div>
       <div className="w-full pt-6 pr-2 pb-3 pl-2 relative flex content-start flex-wrap">
-        <div className="absolute -top-3 left-3 w-9 max-h-9 min-h-9 box-border inline-block scale-100">
+        <div className="absolute -top-6 left-3 w-9 max-h-9 min-h-9 box-border inline-block scale-100">
           <div className="rounded-full w-9 max-h-9 min-h-9 mr-0 inline-block bg-black top-0">
             <div className="relative w-full max-h-9 min-h-9 text-center chart">
               <div className="w-full max-h-9 flex z-10 justify-center items-center">
