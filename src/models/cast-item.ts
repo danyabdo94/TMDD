@@ -1,4 +1,4 @@
-export interface CreditItem {
+export interface CastItem {
   adult: boolean;
   gender: number;
   id: number;

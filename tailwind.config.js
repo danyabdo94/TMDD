@@ -4,6 +4,11 @@ module.exports = {
   purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    extend: {
+      width: {
+        'castImage': "138px"
+      },
+    },
     colors: {
       transparent: "transparent",
       current: "currentColor",
@@ -41,6 +46,7 @@ module.exports = {
       "3/4": "75%",
       "4/5": "80%",
       full: "100%",
+      '34': '8.5rem',
       '80': '20rem'
     },
     minHeight: {
@@ -54,6 +60,7 @@ module.exports = {
       image: "270px",
       '450': "450px",
       full: "100%",
+      'castImage': "175px"
     },
     variants: {
       extend: {},
@@ -62,7 +69,8 @@ module.exports = {
       '-r-200': 'right -200px top'
     },
     maxWidth: {
-      'px-1400': '1400px'
+      'px-1400': '1400px',
+      '4/5': "80%"
     },
     plugins: [],
   },
