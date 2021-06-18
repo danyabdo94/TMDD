@@ -25,6 +25,9 @@ function CarouselView({ cast }: { cast: CastItem[] }) {
             </p>
           </li>
         ))}
+        <li className="flex items-center content-center m-0 p-0 ml-2 min-w-34 w-36 ">
+            <p className="flex items-center content-center m-0 p-0 justify-center w-full font-bold">View more</p>
+        </li>
       </ol>
     </section>
   );
