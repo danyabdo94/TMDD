@@ -3,19 +3,21 @@ import Formatter from "../../utils/formatter";
 import "react-circular-progressbar/dist/styles.css";
 import "./icon.css";
 import ColorsFromVotes from "../../utils/colors-from-votes";
-
+import { Link } from "react-router-dom";
 function MovieItem({ movie }: { movie: any }) {
   const percentage = movie.vote_average * 10;
   return (
     <div className="flex flex-wrap justify-center self-center border border-grey-light w-48 max-w-7xl h-card mt-7 rounded-lg">
       <div className="w-full h-image">
         <div className="w-full h-full">
-          <img
-            loading="lazy"
-            className="w-full h-full rounded-lg rounded-b-none"
-            src={`https://image.tmdb.org/t/p/w440_and_h660_face${movie.backdrop_path}`}
-            alt={movie.original_title}
-          />
+          <Link to={`/movie/${movie.id}`}>
+            <img
+              loading="lazy"
+              className="w-full h-full rounded-lg rounded-b-none"
+              src={`https://image.tmdb.org/t/p/w440_and_h660_face${movie.backdrop_path}`}
+              alt={movie.original_title}
+            />
+          </Link>
         </div>
       </div>
       <div className="w-full pt-6 pr-2 pb-3 pl-2 relative flex content-start flex-wrap">
