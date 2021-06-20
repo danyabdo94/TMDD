@@ -1,18 +1,19 @@
+import axios from "axios";
+import { ASYNC_STATUS } from "./../../app/enums";
 import { GET_MOVIES_SORTED_BY } from "./../../app/const";
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../../app/store";
 import { MovieItem } from "../../models/movie-item";
-import axios from "axios";
 import { MOVIE_TYPES } from "../../app/enums";
 
 export interface MoviesState {
   movies: [MovieItem] | [];
-  status: "idle" | "loading" | "failed";
+  status: ASYNC_STATUS;
 }
 
 const initialState: MoviesState = {
   movies: [],
-  status: "idle",
+  status: ASYNC_STATUS.IDLE,
 };
 
 export const getMoviesAsync = createAsyncThunk(
@@ -36,10 +37,10 @@ export const MoviesSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(getMoviesAsync.pending, (state) => {
-        state.status = "loading";
+        state.status = ASYNC_STATUS.LOADING;
       })
       .addCase(getMoviesAsync.fulfilled, (state, action) => {
-        state.status = "idle";
+        state.status = ASYNC_STATUS.IDLE;
         state.movies = action.payload.results as [MovieItem];
       });
   },
