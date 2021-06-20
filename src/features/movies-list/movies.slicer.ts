@@ -1,22 +1,26 @@
+import { GET_MOVIES_SORTED_BY } from "./../../app/const";
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../../app/store";
 import { MovieItem } from "../../models/movie-item";
 import axios from "axios";
+import { MOVIE_TYPES } from "../../app/enums";
 
 export interface MoviesState {
   movies: [MovieItem] | [];
-  status: 'idle' | 'loading' | 'failed';
+  status: "idle" | "loading" | "failed";
 }
 
 const initialState: MoviesState = {
   movies: [],
-  status: "idle"
+  status: "idle",
 };
 
 export const getMoviesAsync = createAsyncThunk(
   "Movies/fetchMovies",
   async () => {
-    const response = await axios.get(`https://api.themoviedb.org/3/trending/movie/week?api_key=f9f33a1abf02ec3217e6018fc9fe264a`)
+    const response = await axios.get(
+      GET_MOVIES_SORTED_BY(MOVIE_TYPES.UPCOMING)
+    );
     return response.data;
   }
 );
@@ -32,10 +36,10 @@ export const MoviesSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(getMoviesAsync.pending, (state) => {
-        state.status = 'loading';
+        state.status = "loading";
       })
       .addCase(getMoviesAsync.fulfilled, (state, action) => {
-        state.status = 'idle';
+        state.status = "idle";
         state.movies = action.payload.results as [MovieItem];
       });
   },
