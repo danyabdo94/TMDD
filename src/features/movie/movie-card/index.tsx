@@ -80,8 +80,8 @@ export default function MovieCard({
                   </div>
 
                   <ol className="mt-5 justify-start flex-wrap list-none list-inside m-0 p-0 flex top-0 left-0">
-                    {crew.map((crewItem) => (
-                      <li className="text-left mb-3 mr-0 box-border pr-5 w-1/3">
+                    {crew.map((crewItem,index) => (
+                      <li key={`crew-${index}`}  className="text-left mb-3 mr-0 box-border pr-5 w-1/3">
                         <p className="font-bold">{crewItem.name}</p>
                         <p className="text-smaller-10">{crewItem.job}</p>
                       </li>

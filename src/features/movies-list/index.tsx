@@ -1,5 +1,4 @@
 import Filters from "../../components/filters";
-import data from "../../mock.data";
 import MovieItem from "../../components/movie-item";
 import { useAppSelector } from "../../app/hooks";
 import { selectMovies } from "./movies.slicer";
