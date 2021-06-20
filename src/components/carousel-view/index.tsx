@@ -16,12 +16,12 @@ function CarouselView({ cast }: { cast: CastItem[] }) {
                 alt="Emma Stone"
               />
             </a>
-            <span className=" m-0 overflow-hidden p-2 pb-0 overflow-ellipsis">
+            <p className=" m-0 overflow-hidden p-2 pb-0 overflow-ellipsis">
               <a href="/person/54693-emma-stone" className="font-bold">
                 {castItem.name}
               </a>
-              <p className="text-smaller-10">{castItem.character}</p>
-            </span>
+              <span className="text-smaller-10 block">{castItem.character}</span>
+            </p>
           </li>
         ))}
         <li className="flex items-center content-center m-0 p-0 ml-2 min-w-34 w-36 ">
