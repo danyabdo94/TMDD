@@ -8,7 +8,6 @@ function CarouselView({ cast }: { cast: CastItem[] }) {
         {cast?.map((castItem) => (
           <li className="w-36 bg-white mt-2 mb-2 ml-2 mr-1 pb-2 overflow-hidden min-w-34 border border-grey-light rounded-lg card">
             <a href="/person/54693-emma-stone">
-              {console.log({ castItem })}
               <img
                 loading="lazy"
                 className="h-castImage w-castImage outline-none border-0"

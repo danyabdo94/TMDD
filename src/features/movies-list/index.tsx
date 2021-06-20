@@ -1,10 +1,11 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
 import Filters from "../../components/filters";
 import data from "../../mock.data";
 import MovieItem from "../../components/movie-item";
+import { useAppSelector } from "../../app/hooks";
+import { selectMovies } from "./movies.slicer";
 
 function MoviesList() {
+  const movies = useAppSelector(selectMovies);
   return (
     <main className="w-full mt-24 sm:mt-16 min-h-full px-10 py-8">
       <h2 className="text-2xl font-semibold mb-5">Popular Movies</h2>
@@ -14,7 +15,7 @@ function MoviesList() {
         </div>
         <div className="pl-8 w-full sm:min-w-4/5 sm:w-4/5">
           <div className="w-full flex justify-between flex-wrap sm:-mt-7">
-            {data?.results.map((element) => (
+            {(movies?.length) && movies?.map((element) => (
               <MovieItem movie={element} key={element.id}></MovieItem>
             ))}
           </div>

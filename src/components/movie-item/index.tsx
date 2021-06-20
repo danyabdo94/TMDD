@@ -43,7 +43,6 @@ function MovieItem({ movie }: { movie: any }) {
             {movie.original_title.length > 17 ? "..." : ""}
           </a>
         </h2>
-        {console.log(movie.release_date)}
         <p className="text-grey-darkest">{Formatter(movie.release_date)}</p>
       </div>
     </div>
