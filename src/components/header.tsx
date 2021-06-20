@@ -5,7 +5,7 @@ function Header() {
         <div className="flex w-full md:w-1/2 justify-center md:justify-start text-white font-extrabold">
           <a
             className="text-white no-underline hover:text-white hover:no-underline"
-            href="#"
+            href="./"
           >
             <span className="text-2xl pl-2">
               <i className="em em-grinning"></i> TMDD
@@ -17,7 +17,7 @@ function Header() {
             <li className="mr-3">
               <a
                 className="inline-block py-2 px-4 text-white no-underline"
-                href="#"
+                href="./"
               >
                 Active
               </a>
@@ -25,7 +25,7 @@ function Header() {
             <li className="mr-3">
               <a
                 className="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4"
-                href="#"
+                href="./"
               >
                 link
               </a>
@@ -33,7 +33,7 @@ function Header() {
             <li className="mr-3">
               <a
                 className="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4"
-                href="#"
+                href="./"
               >
                 link
               </a>
@@ -41,7 +41,7 @@ function Header() {
             <li className="mr-3">
               <a
                 className="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4"
-                href="#"
+                href="./"
               >
                 link
               </a>
