@@ -10,8 +10,8 @@ function App() {
   dispatch(getMoviesAsync(MOVIE_TYPES.POPULAR));
   return (
     <div className="flex flex-wrap min-h-screen">
-      <Header />
       <Router>
+        <Header />
         <Switch>
           <Route path="/movie/:id">
             <Movie />

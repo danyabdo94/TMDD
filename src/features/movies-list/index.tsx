@@ -12,19 +12,22 @@ function MoviesList() {
   const movies = useAppSelector(selectMovies);
   const history = useHistory();
   const query = useQuery();
+  const typeFromQuery = query.get("type");
   const dispatch = useAppDispatch();
 
-  // If we dont have a movie types we shall add it to params 
+  // If we dont have a movie types we shall add it to params
   // If we have we just dispatch it
   useEffect(() => {
-    const typeFromQuery = query.get("type");
     if (!typeFromQuery) {
       history.push(`?type=${MOVIE_TYPES.POPULAR}`);
     } else {
       setMovieType(typeFromQuery || MOVIE_TYPES.POPULAR.toString());
-      typeFromQuery && dispatch(getMoviesAsync(typeFromQuery));
     }
-  }, [query, history, dispatch]);
+  }, [query, history, dispatch, typeFromQuery]);
+
+  useEffect(() => {
+    typeFromQuery && dispatch(getMoviesAsync(typeFromQuery));
+  }, [typeFromQuery]);
 
   return (
     <main className="w-full mt-24 sm:mt-16 min-h-full px-10 py-8">
