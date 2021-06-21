@@ -4,9 +4,10 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Movie from "./features/movie";
 import { useAppDispatch } from "./app/hooks";
 import { getMoviesAsync } from "./features/movies-list/movies.slicer";
+import { MOVIE_TYPES } from "./app/enums";
 function App() {
   const dispatch = useAppDispatch();
-  dispatch(getMoviesAsync());
+  dispatch(getMoviesAsync(MOVIE_TYPES.POPULAR));
   return (
     <div className="flex flex-wrap min-h-screen">
       <Header />

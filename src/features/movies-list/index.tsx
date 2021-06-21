@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import Filters from "../../components/filters";
 import MovieItem from "../../components/movie-item";
-import { useAppSelector } from "../../app/hooks";
-import { selectMovies } from "./movies.slicer";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
+import { getMoviesAsync, selectMovies } from "./movies.slicer";
 import { MOVIE_TYPES } from "../../app/enums";
 import { useQuery } from "../../utils/use-query";
 
@@ -12,17 +12,20 @@ function MoviesList() {
   const movies = useAppSelector(selectMovies);
   const history = useHistory();
   const query = useQuery();
+  const dispatch = useAppDispatch();
 
+  // If we dont have a movie types we shall add it to params 
+  // If we have we just dispatch it
   useEffect(() => {
     const typeFromQuery = query.get("type");
     if (!typeFromQuery) {
       history.push(`?type=${MOVIE_TYPES.POPULAR}`);
     } else {
       setMovieType(typeFromQuery || MOVIE_TYPES.POPULAR.toString());
-      console.log();
+      typeFromQuery && dispatch(getMoviesAsync(typeFromQuery));
     }
-  }, [query, history]);
-  
+  }, [query, history, dispatch]);
+
   return (
     <main className="w-full mt-24 sm:mt-16 min-h-full px-10 py-8">
       <h2 className="text-2xl font-semibold mb-5">

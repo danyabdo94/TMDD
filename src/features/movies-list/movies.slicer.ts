@@ -18,9 +18,9 @@ const initialState: MoviesState = {
 
 export const getMoviesAsync = createAsyncThunk(
   "Movies/fetchMovies",
-  async () => {
+  async (moviesTypes: MOVIE_TYPES | string) => {
     const response = await axios.get(
-      GET_MOVIES_SORTED_BY(MOVIE_TYPES.UPCOMING)
+      GET_MOVIES_SORTED_BY(moviesTypes)
     );
     return response.data;
   }
